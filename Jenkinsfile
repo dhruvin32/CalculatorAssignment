@@ -3,7 +3,7 @@ pipeline
     environment
     {
         registry = "dhruvin32/calculator"
-        registryCredential = 'DockerHub'
+        registryCredential = 'docker-hub-credentials'
         dockerImage = ''
         //dockerImageLatest = ''
     }
