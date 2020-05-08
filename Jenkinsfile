@@ -93,15 +93,17 @@ pipeline
         }
 
         stage('Deploy on Node'){
-            step([
-                $class:"RundeckNotifier",
-                includeRundeckLogs:true,
-                jobId: "985029a2-cb88-408d-86eb-8f260ea4d635",
-                rundeckInstance: "RundeckConf",
-                shouldFailTheBuild: true,
-                shouldWaitForRundeckJob: true,
-                tailLog: true
-             ])
-         }
+            steps {
+                script {
+                    step([$class: "RundeckNotifier",
+                        includeRundeckLogs: true,
+                        jobId: "985029a2-cb88-408d-86eb-8f260ea4d635",
+                        rundeckInstance: "Rundeck",
+                        shouldFailTheBuild: true,
+                        shouldWaitForRundeckJob: true,
+                        tailLog: true])
+                }
+            }
+        }
     }
 }
