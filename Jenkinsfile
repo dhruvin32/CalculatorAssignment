@@ -88,7 +88,7 @@ pipeline
             steps
             {
                 echo "Run the Calculator"
-                sh "java -cp target/spe_calculator.jar Calculator 3 5"
+                sh "java -cp target/spe_calculator.jar Calculator 3 + 5"
             }
         }
     }
